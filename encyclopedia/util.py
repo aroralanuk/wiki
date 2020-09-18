@@ -3,6 +3,7 @@ import re
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
 
+import markdown2
 
 def list_entries():
     """
@@ -35,3 +36,4 @@ def get_entry(title):
         return f.read().decode("utf-8")
     except FileNotFoundError:
         return None
+
