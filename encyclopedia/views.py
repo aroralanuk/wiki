@@ -11,7 +11,7 @@ def index(request):
 def displayEntry(request, title):
     md = util.get_entry(title)
     if not md:
-        return None
+        return render(request,"encyclopedia/error.html")
     else:
         return render(request,"encyclopedia/entry.html",{
             "title":title,
