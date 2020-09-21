@@ -1,0 +1,31 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    {% if alert %}
+    <div class="alert alert-danger" role="alert">
+        {{ alert }}
+    </div>
+    {% endif %}
+    <h1>Create your own page</h1>
+
+    
+    <form action="{% url 'create' %}" method="POST">
+        {% csrf_token %}
+        <div class="urTitle" style="width:50%">
+            <p style="margin: 0.5rem">Page title:</p>
+            {{ form.newTitle }}
+        </div>
+        <div class="urBody" style="height: 50%">
+            <p  style="margin: 0.5rem">Page content:</p>
+            {{ form.newBody }}
+        </div>
+
+        <input type="submit" value="Submit" style="margin: 0.5rem">
+    </form>
+
+{% endblock %}

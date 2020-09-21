@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia - edit page
+{% endblock %}
+
+{% block body %}
+
+    
+    <form method="POST">
+        {% csrf_token %}
+
+        {%if alert %}
+        <div class="alert alert-danger" role="alert">
+            {{ alert }}
+        </div>
+        {% endif %}
+
+        <div class="urTitle">
+            <h2 class="my-3">Page title: {{title}}</h2>
+        </div>
+        <div class="urBody">
+            <label for="newContent">Content</label>
+            <textarea name="newContent" class="form-control" id="newContent" 
+            cols="30" rows="10">{{content}}</textarea>
+        </div>
+        <input type="submit" value="Save edit" class="btn btn-success my-3" >
+    </form>
+
+{% endblock %}

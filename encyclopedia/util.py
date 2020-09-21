@@ -37,7 +37,7 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
-def search(term):
+def search_entries(term):
     _, filenames = default_storage.listdir("entries")
     return list(sorted(re.sub(r"\.md$", "", filename)
                 for filename in filenames if term in filename.lower() and filename.endswith(".md")))

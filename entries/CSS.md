@@ -1,3 +1,4 @@
-# CSS
+#CSS
 
-CSS is a language that can be used to add style to an [HTML](/wiki/HTML) page.
+**CSS** or *Cascading Style Sheet* is the styling language to asthetically
+uplift websites playing the role of skin to HTML's skeleton.
